@@ -19,7 +19,10 @@ if ($hub_verify_token === $verify_token) {
 $input = json_decode(file_get_contents('php://input'), true);
 
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
-$message = implode (", ",$input['entry'][0]['messaging'][0]) ;
+$message =$input['entry'][0]['messaging'][0];
+
+$output = array_map(function ($object) { return $object->name; }, $message);
+$message= implode(', ', $output);
 
 $message_to_reply = '';
 
