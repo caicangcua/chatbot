@@ -6,27 +6,6 @@
 include 'config.php.sample';
 $hub_verify_token = null;
 
-
-function str_putcsv($data) {
-        # Generate CSV data from array
-        $fh = fopen('php://temp', 'rw'); # don't create a file, attempt
-                                         # to use memory instead
-
-        # write out the headers
-        fputcsv($fh, array_keys(current($data)));
-
-        # write out the data
-        foreach ( $data as $row ) {
-                fputcsv($fh, $row);
-        }
-        rewind($fh);
-        $csv = stream_get_contents($fh);
-        fclose($fh);
-
-        return $csv;
-}
-
-
 if(isset($_REQUEST['hub_challenge'])) {
     $challenge = $_REQUEST['hub_challenge'];
     $hub_verify_token = $_REQUEST['hub_verify_token'];
@@ -40,7 +19,7 @@ if ($hub_verify_token === $verify_token) {
 $input = json_decode(file_get_contents('php://input'), true);
 
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
-$message = str_putcsv($input['entry'][0]['messaging'][0]['message']) ;
+$message = implode (", ",$input['entry'][0]['messaging'][0]) ;
 
 $message_to_reply = '';
 
