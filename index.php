@@ -43,7 +43,7 @@ if(preg_match('[time|current time|now|время|час]', strtolower($message))
     }
 } else {
 
-    $message_to_reply =$message;
+    $message_to_reply ='fuck';
 
 }
 
