@@ -42,7 +42,9 @@ if(preg_match('[time|current time|now|время|час]', strtolower($message))
         $message_to_reply = "Sorry, I don't know.";
     }
 } else {
-    $message_to_reply = 'Sorry, I don\'t understand you. because i'm chatbot.';
+
+    $message_to_reply = 'Sorry, I don\'t understand you. I can only tell what time it is now.';
+
 }
 
 //API Url
