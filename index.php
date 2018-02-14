@@ -16,13 +16,14 @@ if ($hub_verify_token === $verify_token) {
     echo $challenge;
 }
 
-$input = json_decode(file_get_contents('php://input'), true);
+$rawmsg=file_get_contents('php://input');
+
+$input = json_decode($rawmsg, true);
 
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
-$message =$input['entry'][0]['messaging'][0];
+$message =$rawmsg;
 
-$output = array_map(function ($object) { return $object->name; }, $message);
-$message= implode(', ', $output);
+
 
 $message_to_reply = '';
 
