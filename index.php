@@ -3,7 +3,7 @@
  * Webhook for Time Bot- Facebook Messenger Bot
  */
 
-include 'config.php';
+include 'config.php.sample';
 $hub_verify_token = null;
 
 if(isset($_REQUEST['hub_challenge'])) {
