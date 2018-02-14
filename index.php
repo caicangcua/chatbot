@@ -43,7 +43,7 @@ if(preg_match('[time|current time|now|время|час]', strtolower($message))
     }
 } else {
 
-    $message_to_reply =strtolower($message);// 'Sorry, I don\'t understand you. I can only tell what time it is now.';
+    $message_to_reply =$message;
 
 }
 
@@ -60,7 +60,7 @@ $jsonData = '{
         "id":"'.$sender.'"
     },
     "message":{
-        "text":"'.$message_to_reply.'"
+        "text":"'.$message.'"
     }
 }';
 
