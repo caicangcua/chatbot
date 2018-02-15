@@ -1,0 +1,26 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>chatbot</Name>
+    <ProjectGuid>{d1aecbf1-569d-44e5-aab0-2a786319d5db}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include=".gitattributes" />
+    <Compile Include=".gitignore" />
+    <Compile Include=".htaccess" />
+    <Compile Include="config.php.sample" />
+    <Compile Include="index.php" />
+    <Compile Include="LICENSE" />
+    <Compile Include="README.md" />
+  </ItemGroup>
+</Project>
