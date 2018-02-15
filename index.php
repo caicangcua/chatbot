@@ -58,30 +58,3 @@ if ($message) {
 
 
 ?>
-
-//$message_to_reply = '';
-
-///**
-// * Some Basic rules to validate incoming messages
-// */
-//if(preg_match('[time|current time|now|?????|???]', strtolower($message))) {
-
-//    $time = getdate();
-//    $hours = $time['hours'];
-//    if ($time['minutes']<10) {
-//        $minutes = "0".$time['minutes'];
-//    } else {
-//        $minutes = $time['minutes'];
-//    }
-//    $response = $hours.":".$minutes;
-//    if($response != '') {
-//        $message_to_reply = $response;
-//    } else {
-//        $message_to_reply = "Sorry, I don't know.";
-//    }
-//} else {
-
-//    $message_to_reply ='fuck';
-
-//}
-
